@@ -1,0 +1,23 @@
+{
+  "name": "comp2068",
+  "description": "COMP2068 Workspace",
+  "main": "",
+  "authors": [
+    "Jujunol <jujunol@outlook.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/Jujunol/comp2068",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "lib/",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.6",
+    "font-awesome": "^4.5.0"
+  }
+}
