@@ -44,7 +44,7 @@ gulp.task('watch', function() {
 gulp.task('develop', function() {
     // livereload.listen();
     nodemon({
-        script: 'server/app.js',
+        script: 'server.js',
         ext: 'ts',
         tasks: ['transpile'] })
     .on('restart', function() {

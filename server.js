@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-var app = require('./app');
+var app = require('./server/app');
 var debug = require('debug')('COMP2068:server');
 var http = require('http');
 
