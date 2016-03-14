@@ -13,13 +13,11 @@ router.get('/', function(req, res, next) {
             console.log(error);
             res.end(error);
         }
-        else {
-            // we found the list of articles
-            res.render('articles/index', {
-                title: 'Articles',
-                articles: articles
-            })
-        }
+        // we found the list of articles
+        res.render('articles/index', {
+            title: 'Articles',
+            articles: articles
+        });
     });
 });
 
@@ -39,10 +37,44 @@ router.post('/add', function(req, res, next) {
             console.log(error);
             res.end(error);
         }
-        else {
-            res.redirect('/articles');
-        }
+        res.redirect('/articles');
     });
+});
+
+router.get('/:id', function(req, res, next) {
+    article.findById(req.params.id, function(error, article) {
+        if(error) {
+            console.log(error);
+            res.end(error);
+        }
+        res.render('articles/edit', {
+            title: "Edit Article",
+            article: article
+        });
+    });
+});
+
+router.post('/:id', function(req, res, next) {
+    article.findByIdAndUpdate(req.params.id, {
+        title: req.body.title,
+        content: req.body.content
+    }, function(error) {
+        if(error) {
+            console.log(error);
+            res.end(error);
+        }
+        res.redirect('/articles');
+    });
+});
+
+router.get('/delete/:id', function(req, res, next) {
+    article.findByIdAndRemove(req.params.id, function(error) {
+        if(error) {
+            console.log(error);
+            res.end(error);
+        }
+        res.redirect('/articles');
+    })
 });
 
 module.exports = router;
