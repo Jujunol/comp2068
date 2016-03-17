@@ -7,6 +7,8 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
+var passport = require('passport');
+var LocalStrategy = require('passport-local').Strategy;
 
 var routes = require('./routes/index');
 var articles = require('./routes/articles');
@@ -31,12 +33,19 @@ app.set('view engine', 'ejs');
 // set environment for debugging
 app.set('env', 'development');
 
-// uncomment after placing your favicon in /public
+// setting up our enviroment
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
+app.use(require('express-session')({
+    secret: 'keyboardCat',
+    resave: false,
+    saveUninitialized: false
+}));
+app.use(passport.initialize());
+app.use(passport.session());
 
 // setup static routing
 app.use('/scripts', express.static(path.join(path.dirname(__dirname), 'lib')));
@@ -46,6 +55,12 @@ app.use('/scripts', express.static(path.join(path.dirname(__dirname), 'public'))
 app.use('/', routes);
 app.use('/articles', articles);
 app.use('/users', users);
+
+// passport config
+var userModel = require('./models/user');
+passport.use(new LocalStrategy(userModel.authenticate()));
+passport.serializeUser(userModel.serializeUser());
+passport.deserializeUser(userModel.deserializeUser());
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

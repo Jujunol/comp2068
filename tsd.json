@@ -6,7 +6,7 @@
   "bundle": "typings/tsd.d.ts",
   "installed": {
     "serve-static/serve-static.d.ts": {
-      "commit": "dade4414712ce84e3c63393f1aae407e9e7e6af7"
+      "commit": "cc3d223a946f661eff871787edeb0fcb8f0db156"
     },
     "bootstrap/bootstrap.d.ts": {
       "commit": "dade4414712ce84e3c63393f1aae407e9e7e6af7"
@@ -15,13 +15,13 @@
       "commit": "dade4414712ce84e3c63393f1aae407e9e7e6af7"
     },
     "mime/mime.d.ts": {
-      "commit": "dade4414712ce84e3c63393f1aae407e9e7e6af7"
+      "commit": "cc3d223a946f661eff871787edeb0fcb8f0db156"
     },
     "express/express.d.ts": {
-      "commit": "dade4414712ce84e3c63393f1aae407e9e7e6af7"
+      "commit": "cc3d223a946f661eff871787edeb0fcb8f0db156"
     },
     "node/node.d.ts": {
-      "commit": "dade4414712ce84e3c63393f1aae407e9e7e6af7"
+      "commit": "cc3d223a946f661eff871787edeb0fcb8f0db156"
     },
     "orchestrator/orchestrator.d.ts": {
       "commit": "dade4414712ce84e3c63393f1aae407e9e7e6af7"
@@ -42,10 +42,22 @@
       "commit": "dade4414712ce84e3c63393f1aae407e9e7e6af7"
     },
     "cookie-parser/cookie-parser.d.ts": {
-      "commit": "dade4414712ce84e3c63393f1aae407e9e7e6af7"
+      "commit": "cc3d223a946f661eff871787edeb0fcb8f0db156"
     },
     "body-parser/body-parser.d.ts": {
       "commit": "dade4414712ce84e3c63393f1aae407e9e7e6af7"
+    },
+    "passport/passport.d.ts": {
+      "commit": "cc3d223a946f661eff871787edeb0fcb8f0db156"
+    },
+    "passport-local/passport-local.d.ts": {
+      "commit": "cc3d223a946f661eff871787edeb0fcb8f0db156"
+    },
+    "express-serve-static-core/express-serve-static-core.d.ts": {
+      "commit": "cc3d223a946f661eff871787edeb0fcb8f0db156"
+    },
+    "express-session/express-session.d.ts": {
+      "commit": "cc3d223a946f661eff871787edeb0fcb8f0db156"
     }
   }
 }
